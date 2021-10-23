@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Switch
+        android:id="@+id/switchSort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/textViewPopularity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/most_popular"
+        android:onClick="onClickTextViewPopularity"
+        app:layout_constraintBottom_toBottomOf="@+id/switchSort"
+        app:layout_constraintEnd_toStartOf="@+id/switchSort"
+        app:layout_constraintTop_toTopOf="@+id/switchSort" />
+
+    <TextView
+        android:id="@+id/textViewByRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/by_rate"
+        android:onClick="onClickTextViewByRate"
+        android:nestedScrollingEnabled="false"
+        app:layout_constraintBottom_toBottomOf="@+id/switchSort"
+        app:layout_constraintStart_toEndOf="@+id/switchSort"
+        app:layout_constraintTop_toTopOf="@+id/switchSort" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPosters"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:nestedScrollingEnabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switchSort" />
+
+    <ProgressBar
+        android:id="@+id/progressBarMovies"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/switchSort"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

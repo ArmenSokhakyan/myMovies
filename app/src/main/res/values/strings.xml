@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Movies</string>
+    <string name="most_popular">Most popular</string>
+    <string name="by_rate">By rate</string>
+    <string name="label_title">Название:</string>
+    <string name="label_original_title">Оригинальное название:</string>
+    <string name="label_rate">Рейтинг:</string>
+    <string name="label_release_date">Дата релиза:</string>
+    <string name="label_overview">Описание:</string>
+    <string name="big_poster">Big poster</string>
+    <string name="menu_item_favourite">Избранное</string>
+    <string name="menu_item_main">Главная</string>
+</resources>
