@@ -98,12 +98,9 @@ public class MainActivity extends AppCompatActivity {
         loaderManager = LoaderManager.getInstance(this);
         viewModel = MainViewModel.getViewModel(this);
         LiveData<List<Movie>> moviesFromLiveData = viewModel.getMovies();
-        moviesFromLiveData.observe(this, new Observer<List<Movie>>() {
-            @Override
-            public void onChanged(List<Movie> movies) {
-                if (page == 1) {
-                    adapter.setMovies(movies);
-                }
+        moviesFromLiveData.observe(this, movies -> {
+            if (page == 1) {
+                adapter.setMovies(movies);
             }
         });
 
@@ -139,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int width = (int) (displayMetrics.widthPixels / displayMetrics.density);
-        return width / 185 > 0 ? width / 185 : 2;
+        return Math.max(width / 185, 3);
     }
 
     private void setMethodOfSort(boolean byRate) {
